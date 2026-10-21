@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6b5ce7">
+<title>الطفل الذكي</title>
+<style>
+:root{--purple:#6b5ce7;--ink:#20223a;--muted:#747891;--bg:#f7f7fc;--card:#fff;--mint:#dff8ef;--peach:#fff0df}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Tahoma,Arial,sans-serif}
+header{background:linear-gradient(135deg,#7669f4,#9b76e8);color:white;padding:28px 20px 25px;border-radius:0 0 28px 28px}
+.brand{font-size:13px;opacity:.9}.hero{display:flex;align-items:center;justify-content:space-between;gap:10px}.hero h1{font-size:28px;margin:8px 0}.hero p{margin:0;line-height:1.7;font-size:14px}.logo{font-size:43px;background:#ffffff2b;border:1px solid #ffffff55;border-radius:22px;padding:12px}
+main{max-width:720px;margin:auto;padding:18px 16px 34px}.section-title{font-size:18px;margin:8px 0 12px}.panel{background:var(--card);border-radius:20px;padding:17px;margin-bottom:17px;box-shadow:0 6px 22px #33310a08}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:9px}.ages{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.age,.gender{border:1px solid #e4e4f0;background:#fff;border-radius:12px;padding:12px 5px;font:inherit;color:var(--ink);cursor:pointer}.age.active,.gender.active{background:#eeeaff;border-color:var(--purple);color:#5141c6;font-weight:bold}.gender-row{display:flex;gap:9px}.gender{flex:1;margin-top:8px}.primary{width:100%;border:0;background:var(--purple);color:white;border-radius:14px;padding:14px;font-size:16px;font-weight:bold;margin-top:15px;cursor:pointer}
+.welcome{background:linear-gradient(120deg,#e6fff4,#f1edff);border-radius:18px;padding:15px;line-height:1.7;margin-bottom:17px}.chips{display:flex;gap:8px;overflow:auto;padding-bottom:8px}.chip{white-space:nowrap;border:0;background:#ecebfa;color:#5b50bc;border-radius:20px;padding:9px 14px;font:inherit;cursor:pointer}
+.videos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.video{background:white;border-radius:17px;overflow:hidden;box-shadow:0 4px 16px #25234a0a}.thumb{height:115px;display:flex;align-items:center;justify-content:center;font-size:45px}.t1{background:#fff0d9}.t2{background:#dff8ef}.t3{background:#e8e5ff}.t4{background:#ffe5ee}.vinfo{padding:11px}.vinfo strong{font-size:14px;display:block;margin-bottom:5px}.vinfo small{color:var(--muted)}.play{display:block;width:100%;border:0;background:#f0efff;color:#5547c7;padding:9px;margin-top:10px;border-radius:10px;font:inherit;cursor:pointer}
+.notice{font-size:12px;line-height:1.7;color:var(--muted);margin:14px 2px}.bottom{display:flex;justify-content:space-around;background:#fff;border-top:1px solid #eee;padding:12px;position:sticky;bottom:0;color:#777;text-align:center;font-size:12px}.bottom span:first-child{color:var(--purple);font-weight:bold}
+.toast{position:fixed;bottom:70px;left:16px;right:16px;background:#262344;color:#fff;padding:13px 16px;border-radius:13px;display:none;text-align:center;box-shadow:0 8px 25px #0002}
+@media(min-width:600px){.thumb{height:145px}.hero h1{font-size:34px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="brand">نسخة تجريبية أولية</div>
+ <div class="hero"><div><h1>الطفل الذكي</h1><p>وقت ممتع، وتعلّم يناسب عمر طفلك 🌱</p></div><div class="logo">🧸</div></div>
+</header>
+<main>
+ <section class="panel">
+  <h2 class="section-title">لنجهّز تجربة طفلك</h2>
+  <label>اختر الفئة العمرية</label>
+  <div class="ages" id="ages">
+   <button class="age active" data-age="0–1 سنة">0–1 سنة</button><button class="age" data-age="1–2 سنة">1–2 سنة</button><button class="age" data-age="2–3 سنوات">2–3 سنوات</button><button class="age" data-age="3–4 سنوات">3–4 سنوات</button><button class="age" data-age="4–5 سنوات">4–5 سنوات</button><button class="age" data-age="5–6 سنوات">5–6 سنوات</button>
+  </div>
+  <label style="margin-top:16px">اختر الجنس</label>
+  <div class="gender-row"><button class="gender active" data-gender="ذكر">👦 ذكر</button><button class="gender" data-gender="أنثى">👧 أنثى</button></div>
+  <button class="primary" id="save">ابدأ رحلة التعلّم ✨</button>
+ </section>
+ <div class="welcome" id="welcome"><strong>أهلًا بكما! 💜</strong><br><span id="welcomeText">سنقترح محتوى مناسبًا لطفلك حسب العمر الذي اخترته.</span></div>
+ <h2 class="section-title">اكتشف المحتوى</h2>
+ <div class="chips"><button class="chip" data-cat="الكل">🌟 الكل</button><button class="chip" data-cat="أناشيد">🎵 أناشيد</button><button class="chip" data-cat="تعلّم">🔤 تعلّم</button><button class="chip" data-cat="حيوانات">🐘 حيوانات</button><button class="chip" data-cat="كلمات أولى">🗣️ كلمات أولى</button></div>
+ <div class="videos" id="videos">
+  <article class="video" data-cat="أناشيد"><div class="thumb t1">🎶🌈</div><div class="vinfo"><strong>أناشيد وألوان</strong><small>أناشيد • محتوى تجريبي</small><button class="play" data-title="أناشيد وألوان">▶ تجربة المشاهدة</button></div></article>
+  <article class="video" data-cat="تعلّم"><div class="thumb t2">🔺🟡🟦</div><div class="vinfo"><strong>الأشكال والألوان</strong><small>تعلّم • محتوى تجريبي</small><button class="play" data-title="الأشكال والألوان">▶ تجربة المشاهدة</button></div></article>
+  <article class="video" data-cat="حيوانات"><div class="thumb t3">🦁🐘🐰</div><div class="vinfo"><strong>نتعرّف على الحيوانات</strong><small>حيوانات • محتوى تجريبي</small><button class="play" data-title="نتعرّف على الحيوانات">▶ تجربة المشاهدة</button></div></article>
+  <article class="video" data-cat="كلمات أولى"><div class="thumb t4">👶💬</div><div class="vinfo"><strong>كلماتي الأولى</strong><small>كلمات أولى • محتوى تجريبي</small><button class="play" data-title="كلماتي الأولى">▶ تجربة المشاهدة</button></div></article>
+ </div>
+ <p class="notice">تنبيه: هذه واجهة تجريبية لا تحتوي بعد على فيديوهات فعلية أو تنزيل للمشاهدة دون إنترنت أو نظام اشتراكات. أزرار المشاهدة تعرض تجربة توضيحية فقط. سيتم إضافة المحتوى المرخّص وحماية الاشتراك في مرحلة التطوير التالية.</p>
+</main>
+<nav class="bottom"><span>🏠<br>الرئيسية</span><span>📚<br>التصنيفات</span><span>⬇️<br>دون إنترنت</span><span>👨‍👩‍👧<br>ملفي</span></nav>
+<div class="toast" id="toast"></div>
+<script>
+let age='0–1 سنة', gender='ذكر', category='الكل';
+const toast=document.getElementById('toast');
+function showToast(msg){toast.textContent=msg;toast.style.display='block';setTimeout(()=>toast.style.display='none',2400)}
+document.querySelectorAll('.age').forEach(b=>b.onclick=()=>{document.querySelectorAll('.age').forEach(x=>x.classList.remove('active'));b.classList.add('active');age=b.dataset.age});
+document.querySelectorAll('.gender').forEach(b=>b.onclick=()=>{document.querySelectorAll('.gender').forEach(x=>x.classList.remove('active'));b.classList.add('active');gender=b.dataset.gender});
+document.getElementById('save').onclick=()=>{document.getElementById('welcomeText').textContent=`تم اختيار الفئة ${age} والجنس ${gender}. ستُخصّص الاقتراحات وفق هذه الاختيارات في النسخة المطوّرة.`;showToast('تم حفظ الاختيارات في هذه الجلسة التجريبية')};
+document.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{category=b.dataset.cat;document.querySelectorAll('.video').forEach(v=>v.style.display=(category==='الكل'||v.dataset.cat===category)?'block':'none')});
+document.querySelectorAll('.play').forEach(b=>b.onclick=()=>showToast(`هذه تجربة واجهة فقط: ${b.dataset.title} — سيُضاف الفيديو الفعلي لاحقًا.`));
+</script>
+</body>
+</html>
